@@ -328,12 +328,6 @@ body {
   text-decoration: none;
 }
 
-/* .footer .link:hover,
-.footer .link:focus {
-  color: var(--color-accent);
-  cursor: pointer;
-} */
-
 .link.contacts {
   color: var(--text-color-footer-contacts);
 }
