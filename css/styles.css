@@ -16,6 +16,31 @@
   list-style: none;
 }
 
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
 :root {
   --color-accent: #2196f3;
 
@@ -45,7 +70,50 @@ body {
 }
 
 /* header */
-.site-nav .link {
+.page-header {
+  border: 1px solid #ececec;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-main {
+  display: flex;
+  align-items: center;
+}
+
+.nav-main-logo {
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.02em;
+
+  color: var(--text-color-secondary);
+  text-decoration: none;
+
+  margin-right: 93px;
+}
+
+.nav-main-logo-accent,
+.nav-main-logo:hover,
+.nav-main-logo:focus {
+  color: var(--color-accent);
+}
+
+.nav-main-list {
+  display: flex;
+}
+
+.nav-main-list .list-item:not(:first-child) {
+  margin-left: 50px;
+}
+
+.nav-main-list .link {
   color: var(--text-color-secondary);
 
   font-weight: 500;
@@ -53,9 +121,27 @@ body {
   letter-spacing: 0.02em;
 
   text-decoration: none;
+
+  display: block;
+  padding: 32px 0;
 }
 
-.header-contacts .link {
+.nav-main-list .link.current,
+.nav-main-list .link:hover,
+.nav-main-list .link:focus {
+  color: var(--color-accent);
+}
+
+.nav-contacts {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-contacts .list-item:not(:first-child) {
+  margin-left: 50px;
+}
+
+.nav-contacts .link {
   color: var(--text-color-main);
 
   font-weight: 500;
@@ -66,30 +152,15 @@ body {
   text-decoration: none;
 }
 
-.site-nav .link.current,
-.site-nav .link:hover,
-.site-nav .link:focus,
-.header-contacts .link:hover,
-.header-contacts .link:focus {
-  color: var(--color-accent);
-}
-
-.link.logo {
-  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-}
-
-.logo-accent {
+.nav-contacts .link:hover,
+.nav-contacts .link:focus {
   color: var(--color-accent);
 }
 
 /* index.html | main */
 .hero-section {
   background: var(--background-color-secondary);
+  text-align: center;
 }
 
 .hero-title {
@@ -101,9 +172,11 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+  margin-bottom: 30px;
 }
 
-.button {
+.btn {
   cursor: pointer;
 
   color: var(--text-color-secondary);
@@ -114,7 +187,7 @@ body {
   border: none;
 }
 
-.button.primary {
+.btn.hero-btn {
   color: var(--text-color-white);
   background-color: var(--color-accent);
 
@@ -122,6 +195,18 @@ body {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+
+  display: inline-block;
+  height: 50px;
+  padding: 10px 24px;
+}
+
+.section {
+  padding: 94px 0;
+}
+
+.section.no-bottom-padding {
+  padding-bottom: 0px;
 }
 
 .section-title {
@@ -129,6 +214,17 @@ body {
 
   font-size: 36px;
   line-height: 1.17;
+
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.features-list {
+  display: flex;
+}
+
+.features-list .list-item:not(:first-child) {
+  margin-left: 30px;
 }
 
 .features-list .title {
@@ -137,14 +233,42 @@ body {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+.what-we-do {
+  display: flex;
+}
+
+.what-we-do .list-item:not(:first-child) {
+  margin-left: 30px;
+}
+
+.what-we-do .list-item {
+  width: 370px;
 }
 
 .section.team {
   background-color: var(--background-color-team);
+  text-align: center;
+}
+
+.team-list {
+  display: flex;
+}
+
+.team-list .team-member:not(:first-child) {
+  margin-left: 30px;
 }
 
 .team-list .team-member {
   background-color: var(--background-color-main);
+  width: 270px;
+}
+
+.team-info-container {
+  padding: 30px 62px;
 }
 
 .team-list .name {
@@ -153,6 +277,8 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+
+  margin-bottom: 10px;
 }
 
 .team-list .position {
@@ -163,6 +289,8 @@ body {
 /* footer */
 .footer {
   background-color: var(--background-color-secondary);
+
+  padding: 60px 0;
 }
 
 .footer .link {
@@ -171,14 +299,27 @@ body {
   text-decoration: none;
 }
 
+.footer .nav-main-logo {
+  color: var(--text-color-white);
+
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
 .footer .link:hover,
-.footer .link:focus {
+.footer .link:focus,
+.footer .nav-main-logo:hover,
+.footer .nav-main-logo:focus {
   color: var(--color-accent);
   cursor: pointer;
 }
 
 .address {
   font-style: normal;
+}
+
+.address-list .list-item:not(:first-child) {
+  margin-top: 9px;
 }
 
 .location {
@@ -198,7 +339,20 @@ body {
 }
 
 /* portfolio.html */
-.button.inactive {
+.filters {
+  margin-bottom: 34px;
+}
+
+.filter-buttons-list {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-buttons-list .list-item:not(:first-child) {
+  margin-left: 8px;
+}
+
+.btn.inactive {
   color: var(--text-color-secondary);
   background-color: var(--background-color-button-inactive);
 
@@ -206,11 +360,15 @@ body {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+
+  display: inline-block;
+  height: 38px;
+  padding: 6px 22px;
 }
 
-.button.active,
-.button.inactive:hover,
-.button.inactive:focus {
+.btn.active,
+.btn.inactive:hover,
+.btn.inactive:focus {
   color: var(--text-color-white);
   background-color: var(--color-accent);
 
@@ -218,12 +376,31 @@ body {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+
+  display: inline-block;
+  height: 38px;
+  padding: 6px 22px;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.products-list .list-item {
+  width: 370px;
+  border: 1px solid #eeeeee;
 }
 
 .products-list .link {
   color: inherit;
 
   text-decoration: none;
+}
+
+.product-info {
+  padding: 20px 24px;
 }
 
 .products-list .name {
